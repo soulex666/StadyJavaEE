@@ -1,0 +1,7 @@
+
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ıñæè8ê¤Á«ö.
+v
+java:S1989"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(ÂÉ“ş8÷…«ö.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¥şšÏûÿÿÿÿ
+m
+java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.(×–·›8ã˜š«ö.
