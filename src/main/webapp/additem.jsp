@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.andreev.StadyJavaEE.entity.Item" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.andreev.StadyJavaEE.entity.Country" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <title>Title</title>
@@ -13,7 +13,7 @@
         <div class="col-sm-6 offset-3">
             <%
                 String s = request.getParameter("success");
-                if(s != null) {
+                if (s != null) {
 
             %>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -25,9 +25,6 @@
             <%
                 }
             %>
-
-
-
             <form action="additem" method="post">
                 <div class="form-group">
                     <label>Name: </label>
@@ -40,6 +37,23 @@
                 <div class="form-group">
                     <label>Amount: </label>
                     <input type="number" name="amount" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Manufacturer: </label>
+                    <select class="form-control" name="manufacturer_id">
+                    <%
+                        List<Country> countries = (List<Country>) request.getAttribute("countries");
+                        if (countries != null) {
+                            for(Country c: countries) {
+                    %>
+                            <option value="<%=c.getId()%>">
+                                <%=c.getName() + " / " + c.getShortName()%>
+                            </option>
+                    <%
+                            }
+                        }
+                    %>
+                    </select>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-outline-primary">Add Item</button>

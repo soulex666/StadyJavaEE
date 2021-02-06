@@ -1,6 +1,5 @@
-<%@ page import="java.util.List" %>
 <%@ page import="com.andreev.StadyJavaEE.entity.Item" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <title>Title</title>
@@ -20,14 +19,15 @@
                     <%=item.getName()%>
                 </h1>
                 <p class="lead">
-                    Price: <%=item.getPrice()%> RU
+                    Price: <%=item.getPrice()%> RU <br>
+                    Manufacturer: <%=item.getManufacturer().getName() + " - " + item.getManufacturer().getShortName()%>
                 </p>
                 <hr class="my-4">
                 <p>
                     Amount: <%=item.getAmount()%> items
                 </p>
                 <p class="lead">
-                    <a class="btn btn-outline-primary" href="#" role="button">Edit</a>
+                    <a class="btn btn-outline-primary" href="/edit?id=<%=item.getId()%>" role="button">Edit</a>
                 </p>
             </div>
             <%

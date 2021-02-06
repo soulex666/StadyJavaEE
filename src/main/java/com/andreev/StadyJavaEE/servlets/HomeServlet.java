@@ -1,7 +1,7 @@
 package com.andreev.StadyJavaEE.servlets;
 
 import com.andreev.StadyJavaEE.entity.Item;
-import com.andreev.StadyJavaEE.fakeDB.ItemsDBManager;
+import com.andreev.StadyJavaEE.DBConnector.ItemsDBManager;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
