@@ -2,6 +2,7 @@ package com.andreev.StadyJavaEE.DBConnector;
 
 import com.andreev.StadyJavaEE.entity.Country;
 import com.andreev.StadyJavaEE.entity.Item;
+import com.andreev.StadyJavaEE.entity.User;
 import lombok.NoArgsConstructor;
 
 import java.sql.*;
@@ -155,4 +156,40 @@ public class ItemsDBManager {
         }
         return country;
     }
+
+    public static User getUser(String email) {
+        User user = null;
+        try (PreparedStatement statement =
+                     connection.prepareStatement("SELECT * FROM users WHERE email = ? LIMIT 1")) {
+            statement.setString(1, email);
+            ResultSet set = statement.executeQuery();
+            if (set.next()) {
+                user = new User(
+                        set.getLong("id"),
+                        set.getString("email"),
+                        set.getString("password"),
+                        set.getString("full_name"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
+    public static boolean addUser(User user) {
+        int rows = 0;
+        try (PreparedStatement statement = connection.prepareStatement("INSERT INTO users (email, password, full_name) " +
+                "VALUES (?, ?, ?)")) {
+            statement.setString(1, user.getEmail());
+            statement.setString(2, user.getPassword());
+            statement.setString(3, user.getFullName());
+
+            rows = statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return rows > 0;
+    }
+
 }

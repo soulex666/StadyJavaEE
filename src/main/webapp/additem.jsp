@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
-    <title>Title</title>
+    <title>Add Item</title>
     <%@include file="vendor/head.jsp" %>
 </head>
 <body>

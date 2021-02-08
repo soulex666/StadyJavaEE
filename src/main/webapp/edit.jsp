@@ -4,7 +4,7 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
-    <title>Title</title>
+    <title>Edit Item</title>
     <%@include file="vendor/head.jsp" %>
 </head>
 <body>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="form-group">
                     <button class="btn btn-outline-primary">Save Item</button>
-                    <button type="button" class="btn btn-danger float-right" data-toggle="modal" data-target="#staticBackdrop">
+                    <button type="button" class="btn btn-outline-danger float-right" data-toggle="modal" data-target="#staticBackdrop">
                         Delete Item
                     </button>
                 </div>

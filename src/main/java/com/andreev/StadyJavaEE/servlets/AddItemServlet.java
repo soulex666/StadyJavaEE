@@ -33,9 +33,5 @@ public class AddItemServlet extends HttpServlet {
         } else {
             response.sendRedirect("/additem?error");
         }
-
-
-
-
     }
 }

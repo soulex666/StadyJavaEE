@@ -1,9 +1,9 @@
 <%@ page import="com.andreev.StadyJavaEE.entity.Item" %>
-<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Title</title>
-    <%@include file="vendor/head.jsp"%>
+    <title>Details</title>
+    <%@include file="vendor/head.jsp" %>
 </head>
 <body>
 <%@include file="vendor/navbar.jsp" %>

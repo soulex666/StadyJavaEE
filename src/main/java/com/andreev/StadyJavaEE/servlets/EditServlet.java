@@ -36,7 +36,6 @@ public class EditServlet extends HttpServlet {
                 } else {
                     redirect = "/edit?id=" + id + "&error";
                 }
-
             }
         }
 
